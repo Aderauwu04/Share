@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Nunito', sans-serif;
+  &:focus-visible {
+    outline: none;
+  }
+}
+:root {
+  background-color: $background;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --color-primary: ##E0AF4F;
+}
+
+// Text
+.text-center {
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+
+// Paddings & Margins
+$max: 20;
+$unit: 'px';
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin aroundXY($className, $style1, $style2) {
+  $size: 0;
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$style1}: #{$size + $unit} !important;
+      #{$style2}: #{$size + $unit} !important;
+    }
+    $size: $size + 5;
+    $i: $i + 1;
+  }
+}
+  // Paddings
+@include aroundXY('.px-', 'padding-right', 'padding-left');
+@include aroundXY('.py-', 'padding-top', 'padding-bottom');
+
+  // Margins
+@include aroundXY('.mx-', 'margin-right', 'margin-left');
+@include aroundXY('.my-', 'margin-top', 'margin-bottom');
+
+@mixin around-loop($className, $styleName) {
+  $size: 0;
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$size + $unit} !important;
+    }
+    $size: $size + 5;
+    $i: $i + 1;
+  }
+}
+  // Paddings
+@include around-loop('.p-', 'padding');
+@include around-loop('.pt-', 'padding-top');
+@include around-loop('.pb-', 'padding-bottom');
+@include around-loop('.pr-', 'padding-right');
+@include around-loop('.pl-', 'padding-left');
+
+  // Margins
+@include around-loop('.m-', 'margin');
+@include around-loop('.mt-', 'margin-top');
+@include around-loop('.mb-', 'margin-bottom');
+@include around-loop('.mr-', 'margin-right');
+@include around-loop('.ml-', 'margin-left');
+
+// Display
+@mixin display {
+  &-flex {
+    display: flex;
+  }
+  &-inline-block {
+    display: inline-block;
+  }
+  &-block {
+    display: block;
+  }
+  &-none {
+    display: none;
+  }
+}
+.d {
+  @include display;
+  @media screen and (min-width: 576px) {
+    &-sm {
+      @include display;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &-md {
+      @include display;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    &-lg {
+      @include display;
+    }
+  }
+}
+
+// Flex
+.flex {
+  &-end {
+    align-items: flex-end;
+  }
+  &-column {
+    flex-direction: column;
+  }
+}
+// Columnas (Col-)
+@mixin col() {
+  $i: 1;
+  $increase: 8.3;
+  &available{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  &auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+  @while $i <= 12 {
+    &#{$i} {
+      flex: 0 0 #{$increase + '%'};
+      max-width: #{$increase + '%'};
+    }
+    $i: $i + 1;
+    $increase: $increase + 8.3;
+  }
+}
+.col- {
+  @include col;
+  @media screen and (min-width: 576px) {
+    &sm- {
+      @include col
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &md- {
+      @include col
+    }
+  }
+  @media screen and (min-width: 992px) {
+    &lg- {
+      @include col
+    }
+  }
+}
+
+// z-index
+@mixin z-index($className) {
+  $index: 0;
+  @while $index <= 100 {
+    #{$className + $index} {
+      z-index: #{$index};
+    }
+    $index: $index + 1;
+  }
+}
+@include z-index('.z-index-');

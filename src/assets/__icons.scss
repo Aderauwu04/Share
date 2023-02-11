@@ -1,0 +1,18 @@
+.logo-fixed {
+  position: fixed;
+  width: fit-content;
+}
+.logo-fixed p {
+  color: #222832;
+  font-family: 'Fira Mono', monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 41px;
+  line-height: 49px;
+  letter-spacing: 0.29em;
+  text-transform: uppercase;
+}
+.user-icon {
+  color: $primario;
+  font-size: 3.5rem;
+}

@@ -1,0 +1,96 @@
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: center;
+  .sections {
+    align-items: flex-end;
+    display: flex;
+    li {
+      background-color: $terciario;
+      border-radius: 1rem 2rem 0rem 0rem;
+      box-shadow: -3px -6px 20px $background;
+      color: $secundario;
+      font-weight: bold;
+      padding: 1rem;
+      margin-left: -0.5rem;
+    }
+    li.active {
+      background-color: $secundario;
+      z-index: 3;
+      color: $fuente-color;
+    }
+  }
+}
+// User
+.user-log {
+  font-size: 1.5rem;
+  color: $primario;
+}
+// Buttons
+[class*="btn"] {
+  background-color: transparent;
+  border: 0 solid;
+  border-radius: .7rem;
+  color: $terciario;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: .8rem;
+  padding: .5rem;
+  margin: .5rem;
+  text-transform: uppercase;
+
+  &.primary {
+    margin: 0 .4rem;
+    background-color: $primario;
+    color: $fuente-color;
+    font-size: 1.4rem;
+    letter-spacing: 0.07em;
+  }
+  &.secondary {
+    border: 2px solid $terciario;
+  }
+  &.like {
+    margin: 0 1rem;
+    color: $gris-muted;
+    font-size: 2.5rem;
+
+  }
+}
+// Containers
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+}
+// Tweet Cards
+.tweet-card {
+  background-color: $secundario;
+  color: $fuente-color;
+  border-radius: 1rem;
+  margin: .5rem;
+  padding: 1rem;
+  header {
+    color: $fuente-color !important;
+    align-items: center;
+    display: flex;
+  }
+  &.create {
+    display: flex;
+  }
+}
+.tweet-list .tweet-card:first-of-type {
+  margin-top: 0;
+}
+// Form
+.post-textarea {
+  border-radius: .7rem;
+  font-size: 1.3rem;
+  height: 3.3rem;
+  min-height: 3.3rem;
+  padding: .5rem;
+}
