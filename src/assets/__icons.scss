@@ -1,5 +1,7 @@
 .logo-fixed {
+  left: 1.5rem;
   position: fixed;
+  top: 2rem;
   width: fit-content;
 }
 .logo-fixed p {
@@ -14,5 +16,5 @@
 }
 .user-icon {
   color: $primario;
-  font-size: 3.5rem;
+  font-size: 2.7rem;
 }

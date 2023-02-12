@@ -27,7 +27,7 @@
   color: $primario;
 }
 // Buttons
-[class*="btn"] {
+.btn {
   background-color: transparent;
   border: 0 solid;
   border-radius: .7rem;
@@ -37,6 +37,7 @@
   padding: .5rem;
   margin: .5rem;
   text-transform: uppercase;
+  cursor: pointer;
 
   &.primary {
     background-color: $primario;
@@ -51,15 +52,18 @@
     }
   }
   &.outline {
-    border: 2px solid $terciario;
+    margin: 0;
+    padding: .4rem 1rem;
   }
   &.like {
     margin: 0 1rem;
     color: $gris-muted;
     font-size: 2.5rem;
+    &:hover {
+      color: $terciario;
+    }
   }
   &.text-link {
-    cursor: pointer;
     text-decoration: underline;
     padding: 1rem;
   }
@@ -77,11 +81,13 @@
 }
 // Tweet Cards
 .tweet-card {
+  align-items: flex-start;
   background-color: $secundario;
   color: $fuente-color;
   border-radius: 1rem;
   margin: .5rem;
   padding: 1rem;
+  font-size: 1.5rem;
   header {
     color: $fuente-color !important;
     align-items: center;
@@ -103,7 +109,8 @@
   border-radius: .7rem;
   font-size: 1.3rem;
   height: 3.3rem;
-  min-height: 3.3rem;
+  width: 100%;
+  resize: none;
   padding: .5rem;
 }
   // Inputs

@@ -1,6 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function NewTweet() {
+  function textareaHeight(textarea){
+    if(textarea) {
+      console.log(`${textarea.scrollHeight}px`)
+      textarea.style.height = `${textarea.scrollHeight}px`
+    }
+  }
+  // const textarea = document.querySelector('.post-textarea')
+  // window.addEventListener("DOMContentLoaded", () => {
+  //   textarea.style.height = `${textarea.scrollHeight}px`
+  // })
   return (
     <>
       <div className="tweet-card create py-2">
@@ -14,16 +24,17 @@ function NewTweet() {
           </p>
         </header>
         <div className="col-available p-2">
-          <form action="" className="d-flex aling-items-center">
+          <form action="" className="d-flex align-items-center col-available">
             <textarea
-              className="post-textarea col-available"
+              className="post-textarea"
               name="newTweet"
               id="newTweet"
               cols="30"
               rows="10"
+              onFocus={textareaHeight(document.querySelector("textarea"))}
               placeholder="Comparte que piensas... 🖋️"
             ></textarea>
-            <button className="btn primary">¡Publicar!</button>
+            <button className="btn primary">¡Comparte!</button>
           </form>
         </div>
       </div>

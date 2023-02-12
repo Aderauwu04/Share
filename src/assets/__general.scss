@@ -127,6 +127,11 @@ $unit: 'px';
     flex-direction: column;
   }
 }
+.align-items- {
+  &center {
+    align-items: center;
+  }
+}
 // Columnas (Col-)
 @mixin col() {
   $i: 1;
@@ -168,7 +173,6 @@ $unit: 'px';
     }
   }
 }
-
 // z-index
 @mixin z-index($className) {
   $index: 0;

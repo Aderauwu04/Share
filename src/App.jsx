@@ -4,7 +4,7 @@ import TweetCard from "./components/TweetCard"
 import Log from "./components/Log"
 import './fontawesome';
 
-let sesion = true;
+let sesion = false;
 function Logo() {
   return (
     <div className="logo-fixed">

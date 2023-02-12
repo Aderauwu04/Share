@@ -33,14 +33,14 @@ export default function Navbar() {
             )
           }) }
         </ul>
-        <div className="user-log py-2">
+        <div className="user-log d-flex align-items-center py-2">
           <i className="user-icon">
             <FontAwesomeIcon icon="fa-solid fa-circle-user" />
           </i>
-          <div className="d-inline-block p-2">
-            <p>Gloria</p>
+          <div>
+            <p className="d-inline-block px-2">Gloria</p>
             <button
-              className="btn outline"
+              className="btn outline d-block"
             >
               <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
               <small className="px-1"> Cerrar sesión</small>
