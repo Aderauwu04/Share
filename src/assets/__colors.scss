@@ -10,6 +10,8 @@ $alerta: #DF4343;
 
 $background: #181B22;
 
-.gris-muted {
-  color: $gris-muted;
-}
+$colores: (
+  "primario" $primario,
+  "secundario" $secundario,
+  "terciario" $terciario,
+);

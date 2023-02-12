@@ -40,7 +40,7 @@ export default function Navbar() {
           <div className="d-inline-block p-2">
             <p>Gloria</p>
             <button
-              className="btn secondary"
+              className="btn outline"
             >
               <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
               <small className="px-1"> Cerrar sesión</small>

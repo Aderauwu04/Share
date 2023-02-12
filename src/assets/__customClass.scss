@@ -32,7 +32,6 @@
   border: 0 solid;
   border-radius: .7rem;
   color: $terciario;
-  cursor: pointer;
   font-weight: bold;
   font-size: .8rem;
   padding: .5rem;
@@ -40,20 +39,29 @@
   text-transform: uppercase;
 
   &.primary {
-    margin: 0 .4rem;
     background-color: $primario;
     color: $fuente-color;
     font-size: 1.4rem;
     letter-spacing: 0.07em;
+    margin: 0 .4rem;
+    &.form-summit {
+      margin: 0;
+      padding: .7rem;
+      width: 100%;
+    }
   }
-  &.secondary {
+  &.outline {
     border: 2px solid $terciario;
   }
   &.like {
     margin: 0 1rem;
     color: $gris-muted;
     font-size: 2.5rem;
-
+  }
+  &.text-link {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 1rem;
   }
 }
 // Containers
@@ -87,10 +95,68 @@
   margin-top: 0;
 }
 // Form
+.form-log {
+  padding-top: 2rem;
+  border-radius: 1rem;
+}
 .post-textarea {
   border-radius: .7rem;
   font-size: 1.3rem;
   height: 3.3rem;
   min-height: 3.3rem;
   padding: .5rem;
+}
+  // Inputs
+@each $nombre, $valor in $colores {
+  .input-group-#{$nombre} {
+    position: relative;
+    margin: 0 2rem;
+    input {
+      border: 1px solid $valor;
+      border-radius: .5rem;
+      background-color: transparent;
+      color: $terciario;
+      font-size: 1.4rem;
+      margin: .5rem 0;
+      padding: .5rem;
+      width: 100%;
+      @if $nombre == 'secundario' {
+        color: $secundario;
+      }
+    }
+    label {
+      background-color: $secundario;
+      color: $terciario;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 1rem;
+      top: -.3rem;
+      @if $nombre == 'secundario' {
+        background-color: $terciario;
+        color: $secundario;
+      }
+    }
+  }
+}
+
+// Animations
+@mixin shadow-pop($nombre, $color) {
+  @keyframes shadow-pop-#{$nombre} {
+    0% {
+      box-shadow: 0 0 $color, 0 0 $color, 0 0 $color, 0 0 $color, 0 0 $color, 0 0 $color, 0 0 $color, 0 0 $color;
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      box-shadow: -1px -1px $color, -2px -2px $color, -3px -3px $color, -4px -4px $color, -5px -5px $color, -6px -6px $color, -7px -7px $color, -8px -8px $color;
+      transform: translateX(8px) translateY(8px);
+    }
+  }
+}
+@include shadow-pop('terciario', $secundario);
+@include shadow-pop('secundario', $terciario);
+.shadow-pop-secundario {
+  animation: shadow-pop-secundario 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+.shadow-pop-terciario {
+  animation: shadow-pop-terciario 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }

@@ -3,24 +3,54 @@ function LogIn() {
   return (
     <>
       <form action="">
-        <h1>Inicia sesión</h1>
-        <div className="input-group">
-          <input type="text" name="" id="user" />
-          <label for="user">Usuario</label>
+        <div className="form-log bg-color-terciario shadow-pop-terciario">
+          <h1 className="color-secundario text-center">Inicia sesión</h1>
+          <div className="input-group-secundario my-3">
+            <input
+              type="text"
+              name=""
+              id="user"
+            />
+            <label
+              for="user"
+              className="bold px-1"
+            >
+              Usuario
+            </label>
+          </div>
+          <div className="input-group-secundario my-3">
+            <input
+              type="email"
+              name=""
+              id="email"
+            />
+            <label
+              for="email"
+              className="bold px-1"
+            >
+              Correo electrónico
+            </label>
+          </div>
+          <div className="input-group-secundario my-3">
+            <input
+              type="password"
+              name=""
+              id="password"
+            />
+            <label
+              for="password"
+              className="bold px-1"
+            >
+              Contraseña
+            </label>
+          </div>
+          <p className="btn text-link">No tengo cuenta</p>
+          <button
+            className="btn primary form-summit"
+          >
+            ¡listo!
+          </button>
         </div>
-        <div className="input-group">
-          <input type="email" name="" id="email" />
-          <label for="email">Correo electrónico</label>
-        </div>
-        <div className="input-group">
-          <input type="password" name="" id="password" />
-          <label for="password">Contraseña</label>
-        </div>
-        <button
-          className="btn primary"
-        >
-          ¡listo!
-        </button>
       </form>
     </>
   )
@@ -29,34 +59,53 @@ function SingIn() {
   return (
     <>
       <form action="">
-        <h1>Crea tu cuenta</h1>
-        <div className="input-group">
-          <input type="text" name="" id="user" />
-          <label for="user">Usuario</label>
+        <div className="form-log bg-color-secundario shadow-pop-secundario">
+          <h1 className="color-terciario text-center">Crea tu cuenta</h1>
+          <div className="input-group-terciario my-3">
+            <input
+              type="text"
+              name=""
+              id="user"
+            />
+            <label
+              for="user"
+              className="bold px-1"
+            >
+              Usuario
+            </label>
+          </div>
+          <div className="input-group-terciario my-3">
+            <input
+              type="password"
+              name=""
+              id="password"
+            />
+            <label
+              for="password"
+              className="bold px-1"
+            >
+              Contraseña
+            </label>
+          </div>
+          <p className="btn text-link">Ya tengo cuenta</p>
+          <button
+            className="btn primary form-summit"
+          >
+            ¡listo!
+          </button>
         </div>
-        <div className="input-group">
-          <input type="password" name="" id="password" />
-          <label for="password">Contraseña</label>
-        </div>
-        <button
-          className="btn primary"
-        >
-          ¡listo!
-        </button>
       </form>
     </>
   )
 }
-export default function Log(sesion) {
+export default function Log() {
   return (
-    sesion
-    ?
-      <>
-        <SingIn />
-      </>
-    :
-      <>
-        <LogIn />
-      </>
+    (1+1 == 2)
+    ?<>
+      <LogIn />
+    </>
+    :<>
+      <SingIn />
+    </>
   );
 }

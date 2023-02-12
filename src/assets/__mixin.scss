@@ -1,0 +1,9 @@
+@mixin colors($class, $nombre ,$estilo, $valor) {
+  #{$class + $nombre} {
+    #{$estilo}: $valor
+  }
+}
+@each $nombre, $valor in $colores {
+  @include colors('.bg-color-', $nombre, 'background-color', $valor);
+  @include colors('.color-', $nombre, 'color', $valor);
+}
