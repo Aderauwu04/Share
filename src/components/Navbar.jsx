@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export default function Navbar() {
+export function Navbar() {
   const items = [
     {
       name: 'Descubrir',
