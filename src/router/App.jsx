@@ -10,7 +10,7 @@ function RoutesApp() {
       <Routes>
         <Route exact path='/' element={<Iniciar />}></Route>
         <Route exact path='/Crear' element={<Crear />}></Route>
-        <Route exact path='/Descubrir' element={<Descubrir />}></Route>
+        <Route exact path='/Share' element={<Descubrir />}></Route>
       </Routes>
     </BrowserRouter>
   );

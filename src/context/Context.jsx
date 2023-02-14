@@ -73,7 +73,7 @@ export function Contexto_DataProvider(props) {
       data = Sesion;
       localStorage.setItem('SesionActiva', JSON.stringify(data));
     }
-    window.location.href = '/Descubrir';
+    window.location.href = '/Share';
   }
 
   function CerrarSesion() {

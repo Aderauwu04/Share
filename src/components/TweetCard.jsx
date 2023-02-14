@@ -25,13 +25,12 @@ export function NewTweet() {
           <div className='user-icon'>
             <img src={SesionData.icono} />
           </div>
-          <p className='p-2 mx-1'>
+          <p className='p-2 mx-1 text-capitalize'>
             {SesionData.nombre}
-            <small className='d-block gris-muted'>hace 1m</small>
           </p>
         </header>
         <div className='col-available p-2'>
-          <form onSubmit={form_main} className='d-flex flex-column flex-md-row align-items-center col-available'>
+          <form onSubmit={form_main} className='d-flex flex-column flex-lg-row align-items-center col-available'>
             <textarea
               required
               className='post-textarea'
@@ -46,7 +45,7 @@ export function NewTweet() {
               }}
               placeholder='Comparte que piensas... 🖋️'
             ></textarea>
-            <button className='btn primary'>¡Comparte!</button>
+            <button className='btn primary col-lg-4 col-xl-4'>¡Comparte!</button>
           </form>
         </div>
       </div>
@@ -60,17 +59,21 @@ export function TweetCard({ objeto }) {
 
   if (objeto.usuario === data.nombre) {
     return (
-      <div className='tweet-list col-md-8 mx-auto'>
-        <div className='tweet-card'>
-          <header>
+      <div className='tweet-card'>
+        <header>
+          <div className='user-icon'>
             <img src={objeto.icono} />
-            <p className='p-2 mx-1'>
+          </div>
+          <p className='p-2 mx-1'>
+            <span className='text-capitalize'>
               {objeto.usuario}
-              <small className='d-block gris-muted'>{objeto.time}</small>
-            </p>
-          </header>
-          <div className='d-flex flex-column flex-end'>
-            <p className='py-4'>{objeto.texto}</p>
+            </span>
+            <small className='d-block gris-muted'>{objeto.time}</small>
+          </p>
+        </header>
+        <div className='d-flex flex-column'>
+          <p className='py-4'>{objeto.texto}</p>
+          <div className='d-flex justify-content-between'>
             <button
               className='btn like'
               onClick={() => {
@@ -92,28 +95,25 @@ export function TweetCard({ objeto }) {
       </div>
     );
   }
-
   return (
-    <div className='tweet-list col-8 mx-auto'>
-      <div className='tweet-card'>
-        <header>
-          <img src={objeto.icono} />
-          <p className='p-2 mx-1'>
-            {objeto.usuario}
-            <small className='d-block gris-muted'>{objeto.time}</small>
-          </p>
-        </header>
-        <div className='d-flex flex-column flex-end'>
-          <p className='py-4'>{objeto.texto}</p>
-          <button
-            className='btn like'
-            onClick={() => {
-              Like(objeto.id);
-            }}
-          >
-            <FontAwesomeIcon icon='fa-solid fa-thumbs-up' />
-          </button>
-        </div>
+    <div className='tweet-card'>
+      <header>
+        <img src={objeto.icono} />
+        <p className='p-2 mx-1'>
+          {objeto.usuario}
+          <small className='d-block gris-muted'>{objeto.time}</small>
+        </p>
+      </header>
+      <div className='d-flex flex-column flex-end'>
+        <p className='py-4'>{objeto.texto}</p>
+        <button
+          className='btn like'
+          onClick={() => {
+            Like(objeto.id);
+          }}
+        >
+          <FontAwesomeIcon icon='fa-solid fa-thumbs-up' />
+        </button>
       </div>
     </div>
   );

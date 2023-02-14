@@ -14,9 +14,9 @@ export function Descubrir() {
   if (localStorage.getItem('Mensajes') === null || a.length === 0 || localStorage.getItem('Mensajes') == []) {
     return (
       <>
-        <Logo />
+        <Logo login={false}/>
         <Navbar />
-        <div className='tweet-list col-md-8 mx-auto'>
+        <div className='tweet-list col-sm-10 col-md-8 mx-auto'>
           <NewTweet />
           <div className='message-empty'>
             <FontAwesomeIcon icon="fa-solid fa-face-dizzy" />
@@ -32,15 +32,13 @@ export function Descubrir() {
 
   return (
     <>
-      <Logo />
+      <Logo login={false} />
       <Navbar />
-      <div className='tweet-list col-md-8 mx-auto'>
+      <div className='tweet-list col-sm-10 col-md-8 mx-auto'>
         <NewTweet />
-        <div className='Contiene-Tweets'>
-          {tweets.map((t, index) => (
-            <TweetCard key={index} objeto={t} />
-          ))}
-        </div>
+        {tweets.map((t, index) => (
+          <TweetCard key={index} objeto={t} />
+        ))}
       </div>
     </>
   );

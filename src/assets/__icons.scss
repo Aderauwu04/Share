@@ -19,12 +19,23 @@
     text-transform: uppercase;
   }
   @media screen and (min-width: 768px) {
-    left: 1.5rem;
+    display: block;
+    left: 1rem;
     position: fixed;
     top: 2rem;
     width: fit-content;
+    .logo {
+      margin: auto;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    margin: 0;
+    left: .5rem;
+    .logo {
+      width: 6rem;
+    }
     p {
-      font-size: 41px;
+     font-size: 2rem;
     }
   }
 }

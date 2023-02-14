@@ -21,8 +21,14 @@
 }
 
 // Text
-.text-center {
-  text-align: center;
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
 }
 .bold {
   font-weight: bold;
@@ -153,6 +159,19 @@ $unit: 'px';
   &center {
     align-items: center;
   }
+  &lg-end {
+    @media screen and (min-width: 992px) {
+      align-items: flex-end;
+    }
+  }
+}
+.justify-content- {
+  &between {
+    justify-content: space-between;
+  }
+  &center {
+    justify-content: center;
+  }
 }
 // Columnas (Col-)
 @mixin col() {
@@ -191,6 +210,11 @@ $unit: 'px';
   }
   @media screen and (min-width: 992px) {
     &lg- {
+      @include col
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &xl- {
       @include col
     }
   }

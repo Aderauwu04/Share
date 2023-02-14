@@ -1,5 +1,7 @@
 // Navbar
 .navbar {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   .sections {
@@ -93,9 +95,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto 1rem;
   width: fit-content;
   height: fit-content;
+  @media screen and (min-width: 576px) {
+    margin: auto;
+  }
 }
 // Tweet Cards
 .tweet-card {
@@ -112,11 +117,7 @@
     display: flex;
   }
   &.create {
-  }
-  @media screen and (min-width: 768px) {
-    &.create {
-      display: flex;
-    }
+    display: flex;
   }
 }
 .tweet-list .tweet-card:first-of-type {

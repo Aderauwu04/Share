@@ -13,8 +13,8 @@ export function Navbar() {
 
   return (
     <>
-      <nav className='navbar'>
-        <ul className='sections col-md-5'>
+      <nav className='navbar mt-7 pt-2'>
+        <ul className='sections col-sm-8 col-md-6 col-lg-7'>
           <li onClick={AllRead} className='active z-index-3'>
             Descubrir
           </li>
@@ -25,19 +25,19 @@ export function Navbar() {
             Míos
           </li>
         </ul>
-        <div className='user-log d-flex align-items-center py-2'>
-          <div className='user-icon'>
-            <img src={SesionData.icono} />
-          </div>
-          <div>
-            <p className='d-inline-block px-2'>{SesionData.nombre}</p>
-            <button className='btn outline d-block' onClick={CerrarSesion}>
-              <FontAwesomeIcon icon='fa-solid fa-right-from-bracket' />
-              <small className='px-1'> Cerrar sesión</small>
-            </button>
-          </div>
-        </div>
       </nav>
+      <div className='user-log d-flex align-items-center py-2'>
+        <div className='user-icon'>
+          <img src={SesionData.icono} />
+        </div>
+        <div>
+          <p className='d-inline-block px-2'>{SesionData.nombre}</p>
+          <button className='btn outline d-block' onClick={CerrarSesion}>
+            <FontAwesomeIcon icon='fa-solid fa-right-from-bracket' />
+            <small className='px-1'> Cerrar sesión</small>
+          </button>
+        </div>
+      </div>
     </>
   );
 }
