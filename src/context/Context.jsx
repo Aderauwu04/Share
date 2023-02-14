@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
+import uuid from 'react-uuid';
 export const Contexto_Data = createContext();
 export function Contexto_DataProvider(props) {
   const [usuarios, setUsuario] = useState([]);
@@ -9,7 +10,6 @@ export function Contexto_DataProvider(props) {
   }
   function CreateTweet(usuario, texto, icono, correo) {
     let data = new Date();
-    let id = JSON.parse(localStorage.getItem('Mensajes'));
     let tiempo = `${data.getDate()}/${data.getMonth()}/${data.getFullYear()} a las ${data.getHours()}:${data.getMinutes()}`;
     let Object = {
       usuario,
@@ -18,7 +18,7 @@ export function Contexto_DataProvider(props) {
       time: tiempo,
       like: false,
       correo,
-      id: id.length,
+      id: uuid(),
     };
     if (localStorage.getItem('Mensajes') === null) {
       let Mensajes = [];
@@ -130,7 +130,7 @@ export function Contexto_DataProvider(props) {
     }
   }
 
-// Renderizados
+//Renderizados
   function Render_de_Favoritos() {
     let favoritos = JSON.parse(localStorage.getItem('Mensajes'));
     setTweet(favoritos);
