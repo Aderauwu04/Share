@@ -4,23 +4,18 @@ import { useState, useContext } from 'react';
 
 export function NewTweet() {
   const { CreateTweet } = useContext(Contexto_Data);
-
   let SesionActiva = JSON.parse(localStorage.getItem('SesionActiva'));
-
   const [texto, setTexto] = useState('');
-
   function textareaHeight(textarea) {
     if (textarea) {
       textarea.style.height = `${textarea.scrollHeight}px`;
     }
   }
-
   const form_main = (e) => {
     e.preventDefault();
     CreateTweet(SesionActiva.nombre, texto, SesionActiva.icono, SesionActiva.correo);
     setTexto('');
   };
-
   let SesionData = JSON.parse(localStorage.getItem('SesionActiva'));
 
   return (
@@ -36,7 +31,7 @@ export function NewTweet() {
           </p>
         </header>
         <div className='col-available p-2'>
-          <form onSubmit={form_main} className='d-flex align-items-center col-available'>
+          <form onSubmit={form_main} className='d-flex flex-column flex-md-row align-items-center col-available'>
             <textarea
               required
               className='post-textarea'
@@ -65,7 +60,7 @@ export function TweetCard({ objeto }) {
 
   if (objeto.usuario === data.nombre) {
     return (
-      <div className='tweet-list col-8 mx-auto'>
+      <div className='tweet-list col-md-8 mx-auto'>
         <div className='tweet-card'>
           <header>
             <img src={objeto.icono} />

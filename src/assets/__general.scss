@@ -119,12 +119,34 @@ $unit: 'px';
 }
 
 // Flex
-.flex {
-  &-end {
+@mixin flex() {
+  &end {
     align-items: flex-end;
   }
-  &-column {
+  &column {
     flex-direction: column;
+  }
+  &row {
+    flex-direction: row;
+  }
+
+}
+.flex- {
+  @include flex;
+  @media screen and (min-width: 576px) {
+    &sm- {
+      @include flex
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &md- {
+      @include flex
+    }
+  }
+  @media screen and (min-width: 992px) {
+    &lg- {
+      @include flex
+    }
   }
 }
 .align-items- {

@@ -16,7 +16,7 @@ export function Descubrir() {
       <>
         <Logo />
         <Navbar />
-        <div className='tweet-list col-8 mx-auto'>
+        <div className='tweet-list col-md-8 mx-auto'>
           <NewTweet />
           <div className='message-empty'>
             <FontAwesomeIcon icon="fa-solid fa-face-dizzy" />

@@ -3,20 +3,25 @@ import { Contexto_Data } from '../context/Context';
 import { useContext } from 'react';
 
 export function Navbar() {
-  const { CerrarSesion, AllRead, Render_de_Favoritos, Publicaciones_Personales } = useContext(Contexto_Data);
+  const {
+    CerrarSesion,
+    AllRead,
+    Render_de_Favoritos,
+    Publicaciones_Personales
+  } = useContext(Contexto_Data);
   let SesionData = JSON.parse(localStorage.getItem('SesionActiva'));
 
   return (
     <>
       <nav className='navbar'>
-        <ul className='sections col-5'>
-          <li onClick={AllRead} className='true'>
+        <ul className='sections col-md-5'>
+          <li onClick={AllRead} className='active z-index-3'>
             Descubrir
           </li>
-          <li onClick={Render_de_Favoritos} className='false'>
+          <li onClick={Render_de_Favoritos} className='z-index-2'>
             Favoritos
           </li>
-          <li onClick={Publicaciones_Personales} className='false'>
+          <li onClick={Publicaciones_Personales} className='z-index-1'>
             Míos
           </li>
         </ul>

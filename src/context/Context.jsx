@@ -1,16 +1,12 @@
 import { createContext, useState, useEffect } from 'react';
-
 export const Contexto_Data = createContext();
-
 export function Contexto_DataProvider(props) {
   const [usuarios, setUsuario] = useState([]);
   const [tweets, setTweet] = useState([]);
-
   function LeerMensajes() {
     let Mensaje = JSON.parse(localStorage.getItem('Mensajes'));
     setTweet(Mensaje);
   }
-
   function CreateTweet(usuario, texto, icono, correo) {
     let data = new Date();
     let id = JSON.parse(localStorage.getItem('Mensajes'));
@@ -35,7 +31,6 @@ export function Contexto_DataProvider(props) {
     }
     LeerMensajes();
   }
-
   function CrearUsuario(usuario, clave, icono, correo) {
     let usuarios_actuales = JSON.parse(localStorage.getItem('Usuarios'));
     let a = usuarios_actuales.filter((e) => e.usuario === usuario);
@@ -135,8 +130,7 @@ export function Contexto_DataProvider(props) {
     }
   }
 
-  //Renderizados
-
+// Renderizados
   function Render_de_Favoritos() {
     let favoritos = JSON.parse(localStorage.getItem('Mensajes'));
     setTweet(favoritos);
@@ -146,7 +140,6 @@ export function Contexto_DataProvider(props) {
       setTweet(favoritos.filter((e) => e.like === true).reverse());
     }
   }
-
   function Publicaciones_Personales() {
     let Personal = JSON.parse(localStorage.getItem('Mensajes'));
     setTweet(Personal);
