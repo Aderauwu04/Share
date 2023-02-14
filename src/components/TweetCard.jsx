@@ -98,13 +98,15 @@ export function TweetCard({ objeto }) {
   return (
     <div className='tweet-card'>
       <header>
-        <img src={objeto.icono} />
+        <div className='user-icon'>
+          <img src={objeto.icono} />
+        </div>
         <p className='p-2 mx-1'>
           {objeto.usuario}
           <small className='d-block gris-muted'>{objeto.time}</small>
         </p>
       </header>
-      <div className='d-flex flex-column flex-end'>
+      <div className=''>
         <p className='py-4'>{objeto.texto}</p>
         <button
           className='btn like'

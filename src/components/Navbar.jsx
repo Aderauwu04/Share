@@ -13,7 +13,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className='navbar mt-7 pt-2'>
+      <nav className='navbar pt-3'>
         <ul className='sections col-sm-8 col-md-6 col-lg-7'>
           <li onClick={AllRead} className='active z-index-3'>
             Descubrir
