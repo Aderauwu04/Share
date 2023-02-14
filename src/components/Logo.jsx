@@ -4,7 +4,7 @@ import shareLogo from '../assets/share.svg';
 export function Logo(login) {
   let navClass = 'logo-fixed'
   if(login == true) {
-    navClass = 'logo-fixed justify-content-center'
+    navClass = 'logo-fixed log'
   }
   return (
     <div className={navClass}>

@@ -1,27 +1,42 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Contexto_Data } from '../context/Context';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 export function Navbar() {
-  const {
-    CerrarSesion,
-    AllRead,
-    Render_de_Favoritos,
-    Publicaciones_Personales
-  } = useContext(Contexto_Data);
+  const [Index, setIndex] = useState(1)
+
+  const { CerrarSesion, AllRead, Render_de_Favoritos, Publicaciones_Personales } = useContext(Contexto_Data);
   let SesionData = JSON.parse(localStorage.getItem('SesionActiva'));
 
   return (
     <>
-      <nav className='navbar pt-3'>
+      <nav className='navbar pt-2 pt-md-8'>
         <ul className='sections col-sm-8 col-md-6 col-lg-7'>
-          <li onClick={AllRead} className='active z-index-3'>
+          <li
+            onClick={() => {
+              AllRead();
+              setIndex(1);
+            }}
+            className={Index == 1 ? 'active z-index-3' : 'z-index-1'}
+          >
             Descubrir
           </li>
-          <li onClick={Render_de_Favoritos} className='z-index-2'>
+          <li
+            onClick={() => {
+              Render_de_Favoritos();
+              setIndex(2);
+            }}
+            className={Index == 2 ? 'active z-index-3' : 'z-index-2'}
+          >
             Favoritos
           </li>
-          <li onClick={Publicaciones_Personales} className='z-index-1'>
+          <li
+            onClick={() => {
+              Publicaciones_Personales();
+              setIndex(3);
+            }}
+            className={Index == 3 ? 'active z-index-3' : 'z-index-1'}
+          >
             Míos
           </li>
         </ul>

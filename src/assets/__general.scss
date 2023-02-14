@@ -90,6 +90,12 @@ $unit: 'px';
 @include around-loop('.mr-', 'margin-right');
 @include around-loop('.ml-', 'margin-left');
 
+.pt-md-8 {
+  @media screen and (min-width: 768px) {
+    padding-top: 40px !important;
+  }
+}
+
 // Display
 @mixin display {
   &-flex {

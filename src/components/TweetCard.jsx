@@ -29,7 +29,7 @@ export function NewTweet() {
             {SesionData.nombre}
           </p>
         </header>
-        <div className='col-available p-2'>
+        <div className='col-available py-2 '>
           <form onSubmit={form_main} className='d-flex flex-column flex-lg-row align-items-center col-available'>
             <textarea
               required
