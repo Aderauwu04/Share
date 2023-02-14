@@ -4,7 +4,9 @@ import shareLogo from '../assets/share.svg';
 export function Logo() {
   return (
     <div className='logo-fixed'>
-      <img src={shareLogo} className='logo' alt='Share logo' />
+      <div className='logo'>
+        <img src={shareLogo} alt='Share logo' />
+      </div>
       <p className='text-center bold'>Share</p>
     </div>
   );

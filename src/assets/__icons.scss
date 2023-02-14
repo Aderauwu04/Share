@@ -1,18 +1,32 @@
 .logo-fixed {
-  left: 1.5rem;
-  position: fixed;
-  top: 2rem;
-  width: fit-content;
-}
-.logo-fixed p {
-  color: #222832;
-  font-family: 'Fira Mono', monospace;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 41px;
-  line-height: 49px;
-  letter-spacing: 0.29em;
-  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  margin: 1rem;
+  .logo {
+    width: 4rem;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    color: #222832;
+    font-family: 'Fira Mono', monospace;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 49px;
+    letter-spacing: 0.29em;
+    margin: auto .5rem;
+    text-transform: uppercase;
+  }
+  @media screen and (min-width: 768px) {
+    left: 1.5rem;
+    position: fixed;
+    top: 2rem;
+    width: fit-content;
+    p {
+      font-size: 41px;
+    }
+  }
 }
 .user-icon {
   color: $primario;

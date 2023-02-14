@@ -1,10 +1,10 @@
 import React from 'react';
-import { LogIn } from '../components/Log';
+import { SingIn } from '../components/Log';
 
-export function Crear() {
+export function Iniciar() {
   return (
     <div className='container'>
-      <LogIn />
+      <SingIn />
     </div>
   );
 }

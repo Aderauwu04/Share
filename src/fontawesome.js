@@ -1,8 +1,8 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faCircleUser, faRightFromBracket, faThumbsUp
-} from '@fortawesome/free-solid-svg-icons'
+  faCircleUser, faTrash, faRightFromBracket, faThumbsUp, faFaceDizzy
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-  faCircleUser, faRightFromBracket, faThumbsUp
-)
+  faCircleUser, faRightFromBracket, faThumbsUp, faTrash, faFaceDizzy
+);

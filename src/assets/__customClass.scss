@@ -22,7 +22,18 @@
   }
 }
 // User
+.user-icon {
+  width: 4rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  & img {
+    width: 100%;
+  }
+}
 .user-log {
+  position: absolute;
+  right: 0;
+  top: 0;
   font-size: 1.5rem;
   color: $primario;
 }
@@ -66,6 +77,12 @@
   &.text-link {
     text-decoration: underline;
     padding: 1rem;
+    &-primario {
+      color: $primario;
+    }
+    &-secundario {
+      color: $secundario;
+    }
   }
 }
 // Containers
@@ -94,7 +111,12 @@
     display: flex;
   }
   &.create {
-    display: flex;
+  }
+  @media screen and (min-width: 768px) {
+    &.create {
+      display: flex;
+      
+    }
   }
 }
 .tweet-list .tweet-card:first-of-type {
@@ -113,7 +135,7 @@
   resize: none;
   padding: .5rem;
 }
-  // Inputs
+// Inputs
 @each $nombre, $valor in $colores {
   .input-group-#{$nombre} {
     position: relative;
@@ -143,6 +165,22 @@
         color: $secundario;
       }
     }
+  }
+}
+// Mensajes
+.message-empty {
+  color: $gris-muted;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3rem;
+  margin: 1rem auto;
+  width: fit-content;
+  & svg {
+    font-size: 10rem;
+  }
+  & span {
+    font-size: 1.5rem;
   }
 }
 

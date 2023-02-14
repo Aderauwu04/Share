@@ -25,29 +25,36 @@ export function LogIn() {
           <h1 className='color-secundario text-center'>Crear Cuenta</h1>
           <div className='input-group-secundario my-3'>
             <input type='text' value={usuario} id='user' onChange={(e) => setUsuario(e.target.value)} />
-            <label for='user' className='bold px-1'>
+            <label htmlFor='user' className='bold px-1'>
               Usuario
             </label>
           </div>
           <div className='input-group-secundario my-3'>
-            <input type='email' value={correo} id='email' onChange={(e) => setCorreo(e.target.value)} />
-            <label for='email' className='bold px-1'>
+            <input required type='email' value={correo} id='email' onChange={(e) => setCorreo(e.target.value)} />
+            <label htmlFor='email' className='bold px-1'>
               Correo electrónico
             </label>
           </div>
           <div className='input-group-secundario my-3'>
-            <input type='text' value={icono} id='user' onChange={(e) => setIcono(e.target.value)} />
-            <label for='user' className='bold px-1'>
+            <input required type='text' value={icono} id='user' onChange={(e) => setIcono(e.target.value)} />
+            <label htmlFor='user' className='bold px-1'>
               Icono URL
             </label>
           </div>
           <div className='input-group-secundario my-3'>
-            <input type='password' value={clave} id='password' onChange={(e) => setClave(e.target.value)} />
-            <label for='password' className='bold px-1'>
+            <input required type='password' value={clave} id='password' onChange={(e) => setClave(e.target.value)} />
+            <label htmlFor='password' className='bold px-1'>
               Contraseña
             </label>
           </div>
-          <p className='btn text-link'>No tengo cuenta</p>
+          <p
+            className='btn text-link-secundario text-center'
+            onClick={() => {
+              window.location.href = '/';
+            }}
+          >
+            Inicia sesión
+          </p>
           <button className='btn primary form-summit'>¡listo!</button>
         </div>
       </form>
@@ -71,9 +78,10 @@ export function SingIn() {
     <>
       <form onSubmit={Manejador2}>
         <div className='form-log bg-color-secundario shadow-pop-secundario'>
-          <h1 className='color-terciario text-center'>Inicia Sesion</h1>
+          <h1 className='color-terciario text-center'>Inicia sesión</h1>
           <div className='input-group-terciario my-3'>
             <input
+              required
               type='text'
               value={usuario2}
               onChange={(e) => {
@@ -81,12 +89,13 @@ export function SingIn() {
               }}
               id='user'
             />
-            <label for='user' className='bold px-1'>
+            <label htmlFor='user' className='bold px-1'>
               Usuario
             </label>
           </div>
           <div className='input-group-terciario my-3'>
             <input
+              required
               type='password'
               value={clave2}
               onChange={(e) => {
@@ -94,11 +103,18 @@ export function SingIn() {
               }}
               id='password'
             />
-            <label for='password' className='bold px-1'>
+            <label htmlFor='password' className='bold px-1'>
               Contraseña
             </label>
           </div>
-          <p className='btn text-link'>Ya tengo cuenta</p>
+          <p
+            className='btn text-link-primario text-center'
+            onClick={() => {
+              window.location.href = '/Crear';
+            }}
+          >
+            No tengo cuenta
+          </p>
           <button className='btn primary form-summit'>¡listo!</button>
         </div>
       </form>
