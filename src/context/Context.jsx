@@ -33,7 +33,6 @@ export function Contexto_DataProvider(props) {
   }
   function CrearUsuario(usuario, clave, icono, correo) {
     let usuarios_actuales = JSON.parse(localStorage.getItem('Usuarios'));
-    let a = usuarios_actuales.filter((e) => e.usuario === usuario);
     var userData = {
       usuario,
       clave,
@@ -41,14 +40,11 @@ export function Contexto_DataProvider(props) {
       correo,
     };
     if (localStorage.getItem('Usuarios') === null) {
-      if (a.length == 1) {
-        alert('Nombre de usuario no disponible');
-      } else {
-        let UsersData = [];
-        UsersData.push(userData);
-        localStorage.setItem('Usuarios', JSON.stringify(UsersData));
-      }
+      let UsersData = [];
+      UsersData.push(userData);
+      localStorage.setItem('Usuarios', JSON.stringify(UsersData));
     } else {
+      let a = usuarios_actuales.filter((e) => e.usuario === usuario);
       if (a.length == 1) {
         alert('Nombre de usuario no disponible');
       } else {
@@ -130,7 +126,7 @@ export function Contexto_DataProvider(props) {
     }
   }
 
-//Renderizados
+  //Renderizados
   function Render_de_Favoritos() {
     let favoritos = JSON.parse(localStorage.getItem('Mensajes'));
     setTweet(favoritos);
